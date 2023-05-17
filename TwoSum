@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        
+        vector<int> return_vec;
+
+        bool j_holder = false;
+        for (int i = 0; i < nums.size(); i++) {
+
+            for (int j = 0; j < nums.size(); j++) {
+
+
+                if (nums[i] + nums[j] == target && i != j) {
+                    return_vec.push_back(i);
+                    return_vec.push_back(j);
+                    j_holder = true;
+                    break;
+                }
+            }
+            if (j_holder) {
+                break;
+            }
+        }
+        return return_vec;
+    }
+};
